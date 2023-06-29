@@ -4,15 +4,20 @@
   "description": "",
   "main": "debounce.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^11.0.0"
+    "@jest/globals": "^29.5.0",
+    "@types/jest": "^29.5.2",
+    "commander": "^11.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.5"
   },
-
   "bin": {
     "message": "./bin/index.js"
   }

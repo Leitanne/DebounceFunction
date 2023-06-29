@@ -1,40 +1,15 @@
 #! /usr/bin/env node
 const debounceImport = require("../dist/debounce.js");
-const readline = require('readline');
+const program = require('commander');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-})
+program
+    .version('1.0.0')
+    .description('App for debounce function');
 
-const commands = {
-    mensaje: displayMessageCLI
-}
+program
+    .command('debounce <message>')
+    .description('Ejecuta la funcion debounce')
+    .action(console.log("Mensaje prefunción debounce"))
+    .action(async(message) => await debounceImport.debounce(message).then(message => console.log(message)));
 
-consoleMenu();
-
-function consoleMenu(){
-    rl.question(`Se mostrará un mensaje sin retraso y otro con retraso
-                   escribe mensaje + el texto que quieras escribir: `, (command) => {
-        const parts = command.trim().split(' ');
-        const commandName = parts[0];
-        const args = parts.slice(1);
-    
-        if(commands.hasOwnProperty(commandName)){
-            commands[commandName](args);
-        } else{
-            console.log('invalid command');
-            consoleMenu();
-        }
-    })
-
-}
-
-async function displayMessageCLI(text){
-    await debounceImport.displayMessage(text);
-    exitCLI();
-}
-
-function exitCLI(){
-    rl.close();
-}
+program.parse(process.argv);

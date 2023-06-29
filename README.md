@@ -1,8 +1,13 @@
+# TEST
+npm install
+
+Una vez instaladas las dependencias, ejecutamos los test con
+
+npm test
+
 # EJECUTAR EL CLI
 
 npm install -g .
 
-Entonces, usamos en terminal la palabra "message".
-
 A continuación, podemos probar la funcionalidad con el siguiente comando:
-mensaje + <texto introducido por el usuario>
+message + debounce + <texto introducido por el usuario>
