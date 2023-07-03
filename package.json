@@ -4,7 +4,8 @@
   "description": "",
   "main": "debounce.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node ./bin/index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +18,5 @@
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.5"
-  },
-  "bin": {
-    "message": "./bin/index.js"
   }
 }
