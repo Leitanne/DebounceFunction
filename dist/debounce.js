@@ -9,8 +9,3 @@ const debounce = (mensaje) => {
     });
 };
 exports.debounce = debounce;
-function probarDebounce() {
-    console.log("Antes de la promesa");
-    (0, exports.debounce)("Mensaje después de ejecutar la promesa")
-        .then(mensaje => console.log(mensaje));
-}
